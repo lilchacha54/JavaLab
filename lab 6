@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Введите количество пирожков");
+        int a= scan.nextInt();
+        System.out.println("Сколько рублей стоит пирожок");
+        int b= scan.nextInt();
+        System.out.println("Сколько копеек стоит пирожок");
+        int c= scan.nextInt();
+        int cenar=0;
+        int cenacop=0;
+        cenar=a*b;
+        cenacop=a*c;
+        if(cenacop>=100){
+            cenar+= cenacop/100;
+            cenacop=cenacop%100;
+        }
+        System.out.println("Пирожки стоят "+ cenar +" рублей " + cenacop + " Копеек ");
+        }
+    }
