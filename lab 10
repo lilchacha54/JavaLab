@@ -1,0 +1,17 @@
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("На сколько метров улитка поднимается днем?");
+        int u = scan.nextInt();
+        System.out.println("На сколько метров улитка спускается вниз?");
+        int u2 = scan.nextInt();
+        System.out.println("Введите высоту шеста");
+        int h = scan.nextInt();
+        int d = h /  (u- u2);
+        System.out.println("Улитка поднялась вверх за "+ d +" дней");
+    }
+
+}
