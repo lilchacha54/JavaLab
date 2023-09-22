@@ -1,0 +1,11 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Введите длинну и ширину прямоугольника");
+        int dlina= scan.nextInt();
+        int shirina=scan.nextInt();
+        System.out.println("Площадь="+ dlina*shirina);
+        System.out.println("Периметр="+(dlina+shirina)*2);
+        }
+    }
