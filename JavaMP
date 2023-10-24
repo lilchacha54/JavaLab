@@ -1,0 +1,71 @@
+1.
+public class Main {
+
+    public static int factorial(int x) {
+        if (x == 0) {
+            return 1;
+        } else {
+            return x * factorial(x - 1);
+        }
+    }
+
+    public static void main(String[] args) {
+        int x = 5;
+
+        int result = factorial(x);
+        System.out.println("Факториал числа " + x + " = " + result);
+    }
+}
+
+2.
+public class Main {
+
+    public static int second_count(int days, int hours, int minutes, int seconds) {
+        int secondsCount = 0;
+
+        secondsCount += days * 24 * 60 * 60;
+        secondsCount += hours * 60 * 60;
+        secondsCount += minutes * 60;
+        secondsCount += seconds;
+
+        return secondsCount;
+    }
+
+    public static void main(String[] args) {
+        int days = 2;
+        int hours = 13;
+        int minutes = 45;
+        int seconds = 30;
+
+        int totalSeconds = second_count(days, hours, minutes, seconds);
+        System.out.println("Количество секунд: " + totalSeconds);
+    }
+}
+
+3.
+public class Main {
+    public static int find_line7(int[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            int sum = 0;
+            for (int j = 0; j < matrix[i].length; j++) {
+                sum += matrix[i][j];
+            }
+            if (sum % 7 == 0) {
+                return i;
+            }
+        }
+        return -1;
+    }
+    
+    public static void main(String[] args) {
+        int[][] matrix = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+        int index = find_line7(matrix);
+        System.out.println("Индекс первой строки с суммой кратной 7: " + index);
+    }
+}
+
+4.
