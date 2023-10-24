@@ -1,0 +1,198 @@
+1.
+public class Main {
+
+    public static int min(int a, int b, int c, int d) {
+        int result = a;
+
+        if (b < result) {
+            result = b;
+        }
+        if (c < result) {
+            result = c;
+        }
+        if (d < result) {
+            result = d;
+        }
+
+        return result;
+    }
+
+    public static void main(String[] args) {
+        int a = 5;
+        int b = 2;
+        int c = 7;
+        int d = 3;
+
+        int minValue = min(a, b, c, d);
+        System.out.println("Наименьшее число: " + minValue);
+    }
+}
+2.
+public class Main {
+
+    public static boolean xor(boolean x, boolean y) {
+        return (x || y) && !(x && y);
+    }
+
+    public static void main(String[] args) {
+        boolean x = true;
+        boolean y = false;
+
+        boolean result = xor(x, y);
+        System.out.println("Результат xor: " + result);
+    }
+}
+3.
+
+public class Main {
+
+    public static boolean election(boolean x, boolean y, boolean z) {
+        int trueCount = 0;
+        int falseCount = 0;
+
+        if (x) {
+            trueCount++;
+        } else {
+            falseCount++;
+        }
+
+        if (y) {
+            trueCount++;
+        } else {
+            falseCount++;
+        }
+
+        if (z) {
+            trueCount++;
+        } else {
+            falseCount++;
+        }
+
+        return trueCount > falseCount;
+    }
+
+    public static void main(String[] args) {
+        boolean x = true;
+        boolean y = false;
+        boolean z = true;
+
+        boolean result = election(x, y, z);
+        System.out.println("Результат голосования: " + result);
+    }
+}
+
+4.
+public class Main {
+
+    public static int digit_count(String str) {
+        int count = 0;
+        
+        for (int i = 0; i < str.length(); i++) {
+            if (Character.isDigit(str.charAt(i))) {
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+    public static void main(String[] args) {
+        String str = "AbC123xyz789";
+        int count = digit_count(str);
+        System.out.println("Количество цифр в строке: " + count);
+    }
+}
+
+5.
+
+public class Main 
+{
+
+    public static double power(double base, int exponent) {
+        if (exponent == 0){
+            return 1;
+        }
+        
+        double result = 1.0;
+        int absExponent = Math.abs(exponent);
+        
+        for (int i = 1; i <= absExponent; i++) {
+            result *= base;
+        }
+        
+        if (exponent < 0) {
+            result = 1.0 / result;
+        }
+        
+        return result;
+    }
+
+    public static void main(String[] args) {
+        double base = 2.5;
+        int exponent = 3;
+
+        double result = power(base, exponent);
+        System.out.println(base + " в степени " + exponent + " = " + result);
+    }
+}
+
+6.
+public class Main {
+
+    public static void generateChains(int N, int K) {
+        int[] chain = new int[N];
+        generate(chain, 0, K);
+    }
+
+    public static void generate(int[] chain, int index, int K) {
+        if (index == chain.length) {
+            printChain(chain);
+            return;
+        }
+
+        for (int i = 1; i <= K; i++) {
+            chain[index] = i;
+            generate(chain, index + 1, K);
+        }
+    }
+
+    public static void printChain(int[] chain) {
+        for (int x : chain) {
+            System.out.print(x + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        int N = 3;
+        int K = 5;
+
+        generateChains(N, K);
+    }
+}
+7.
+public class Main {
+
+    public static boolean isPossible(int N) {
+        if (N == 1) {
+            return true;
+        }
+        
+        if (N < 1) {
+            return false;
+        }
+        
+        if (N % 5 == 0) {
+            return isPossible(N / 5);
+        }
+        
+        return isPossible(N - 3);
+    }
+
+    public static void main(String[] args) {
+        int N = 23;
+
+        boolean result = isPossible(N);
+        System.out.println("Можно ли получить число " + N + " из числа 1: " + result);
+    }
+}
