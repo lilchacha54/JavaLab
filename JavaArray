@@ -1,0 +1,274 @@
+1.import java.util.Scanner;
+
+public class CubeArray {
+    public static void main(String[] args) {
+        int[] cubes = new int[1000];
+        
+        for (int i = 0; i < 1000; i++) {
+            cubes[i] = (i + 1) * (i + 1) * (i + 1);
+        }
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        int num1 = scanner.nextInt();
+        int num2 = scanner.nextInt();
+        
+        int cube1 = cubes[num1 - 1];
+        int cube2 = cubes[num2 - 1];
+        
+        System.out.println("Cube of " + num1 + ": " + cube1);
+        System.out.println("Cube of " + num2 + ": " + cube2);
+    }
+}
+
+2.
+import java.util.Scanner;
+
+public class MultiplyNumbers {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        int n = scanner.nextInt();
+        int[] numbers = new int[n];
+        
+        for (int i = 0; i < n; i++) {
+            numbers[i] = scanner.nextInt();
+        }
+        
+        int multiplier = scanner.nextInt();
+        
+        for (int i = 0; i < n; i++) {
+            int result = numbers[i] * multiplier;
+            System.out.println(result);
+        }
+    }
+}
+
+3.
+import java.util.Scanner;
+
+public class ReverseNumbers {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int n = scanner.nextInt();
+        int[] numbers = new int[n];
+
+        // Считывание чисел и вычисление суммы
+        int sum = 0;
+        for (int i = 0; i < n; i++) {
+            numbers[i] = scanner.nextInt();
+            sum += numbers[i];
+        }
+
+        // Вывод суммы
+        System.out.println("Сумма всех элементов: " + sum);
+
+        // Вывод чисел в обратном порядке
+        System.out.println("Числа в обратном порядке:");
+        for (int i = n - 1; i >= 0; i--) {
+            System.out.println(numbers[i]);
+        }
+    }
+}
+
+4.
+import java.util.Scanner;
+
+public class SumEvenIndex {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int n = scanner.nextInt();
+        int[] numbers = new int[n];
+
+        // Считывание чисел
+        for (int i = 0; i < n; i++) {
+            numbers[i] = scanner.nextInt();
+        }
+
+        // Вычисление суммы элементов с четными индексами
+        int sum = 0;
+        for (int i = 0; i < n; i += 2) {
+            sum += numbers[i];
+        }
+
+        // Вывод суммы
+        System.out.println("Сумма элементов с четными индексами: " + sum);
+
+        // Вывод чисел, которые суммировались
+        System.out.println("Числа, которые суммировались:");
+        for (int i = 0; i < n; i += 2) {
+            System.out.println(numbers[i]);
+        }
+    }
+}
+
+5.
+import java.util.Scanner;
+
+public class SwapArrayElements {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Считывание списка чисел
+        int n = scanner.nextInt();
+        int[] numbers = new int[n];
+        for (int i = 0; i < n; i++) {
+            numbers[i] = scanner.nextInt();
+        }
+
+        // Считывание чисел a и b
+        int a = scanner.nextInt();
+        int b = scanner.nextInt();
+
+        // Поменять местами значения a-ого и b-ого элементов массива
+        int temp = numbers[a];
+        numbers[a] = numbers[b];
+        numbers[b] = temp;
+
+        // Вывод массива построчно
+        for (int i = 0; i < n; i++) {
+            System.out.println(numbers[i]);
+        }
+    }
+}
+
+6.
+import java.util.Scanner;
+
+public class FindPosition {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Считывание списка чисел
+        int n = scanner.nextInt();
+        int[] numbers = new int[n];
+        for (int i = 0; i < n; i++) {
+            numbers[i] = scanner.nextInt();
+        }
+
+        // Считывание числа для поиска
+        int target = scanner.nextInt();
+
+        // Поиск позиции числа в последовательности
+        int position = -1;
+        for (int i = 0; i < n; i++) {
+            if (numbers[i] == target) {
+                position = i + 1; // Позиции в последовательности начинаются с 1, а не с 0
+                break;
+            }
+        }
+
+        // Вывод позиции числа
+        System.out.println(position);
+    }
+}
+
+7.
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class Main {
+    public static void main(String[] args) {
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(2);
+        list.add(4);
+        list.add(1);
+        list.add(5);
+
+        List<Integer> result = findUniqueElements(list);
+        System.out.println(result);
+    }
+
+    public static List<Integer> findUniqueElements(List<Integer> list) {
+        Map<Integer, Integer> countMap = new HashMap<>();
+
+        for (Integer element : list) {
+            countMap.put(element, countMap.getOrDefault(element, 0) + 1);
+        }
+
+        List<Integer> uniqueElements = new ArrayList<>();
+
+        for (Integer element : list) {
+            if (countMap.get(element) == 1) {
+                uniqueElements.add(element);
+            }
+        }
+
+        return uniqueElements;
+    }
+}
+
+8.
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) {
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(5);
+
+        List<Integer> result = swapAdjacentElements(list);
+        System.out.println(result);
+    }
+
+    public static List<Integer> swapAdjacentElements(List<Integer> list) {
+        for (int i = 0; i < list.size() - 1; i += 2) {
+            int temp = list.get(i);
+            list.set(i, list.get(i + 1));
+            list.set(i + 1, temp);
+        }
+
+        return list;
+    }
+}
+
+9.
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Ввод чисел a и b
+        System.out.print("Введите число a: ");
+        int a = scanner.nextInt();
+        
+        System.out.print("Введите число b: ");
+        int b = scanner.nextInt();
+        
+        // Создание массива и заполнение его кубами чисел от a до b
+        int[] cubes = new int[b - a + 1];
+        for (int i = 0; i < cubes.length; i++) {
+            cubes[i] = (a + i) * (a + i) * (a + i);
+        }
+        
+        // Ввод числа n
+        System.out.print("Введите число n: ");
+        int n = scanner.nextInt();
+        
+        // Ввод n чисел и вывод их кубов
+        System.out.println("Кубы введенных чисел:");
+        for (int i = 0; i < n; i++) {
+            int num = scanner.nextInt();
+            
+            if (num < a || num > b) {
+                System.out.println("Error");
+            } else {
+                int index = num - a;
+                int cube = cubes[index];
+                System.out.println(cube);
+            }
+        }
+    }
+}
