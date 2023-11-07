@@ -1,0 +1,154 @@
+// Файл: Book.java
+
+public class Book {
+    private String title;
+    private String author;
+    private String category;
+    private boolean availability;
+
+    public Book(String title, String author, String category, boolean availability) {
+        this.title = title;
+        this.author = author;
+        this.category = category;
+        this.availability = availability;
+    }
+
+    // Геттеры и сеттеры
+}
+
+// Файл: Employee.java
+
+public class Employee {
+    private int id;
+    private String name;
+    private String position;
+    private double salary;
+
+    public Employee(int id, String name, String position, double salary) {
+        this.id = id;
+        this.name = name;
+        this.position = position;
+        this.salary = salary;
+    }
+
+    // Геттеры и сеттеры
+}
+
+// Файл: Client.java
+
+public class Client {
+    private int id;
+    private String name;
+    private String membership;
+
+    public Client(int id, String name, String membership) {
+        this.id = id;
+        this.name = name;
+        this.membership = membership;
+    }
+
+    // Геттеры и сеттеры
+}
+
+// Файл: Library.java
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Library {
+    private List<Book> bookList;
+    private List<Employee> employeeList;
+    private List<Client> clientList;
+
+    public Library() {
+        this.bookList = new ArrayList<>();
+        this.employeeList = new ArrayList<>();
+        this.clientList = new ArrayList<>();
+    }
+
+    // Методы управления списками книг, сотрудников и клиентов
+}
+
+// Файл: Main.java
+
+public class Main {
+    public static void main(String[] args) {
+        Library library = new Library();
+
+        // Взаимодействие с библиотекой
+    }
+}
+
+// Файл: Reader.java
+
+public interface Reader {
+    void readBook(Book book);
+}
+
+// Файл: Librarian.java
+
+public interface Librarian {
+    void addBook(Book book);
+    void removeBook(Book book);
+}
+
+// Файл: ReaderClient.java
+
+public class ReaderClient implements Reader {
+    @Override
+    public void readBook(Book book) {
+        //
+Читаем книгу
+    }
+}
+
+// Файл: LibrarianClient.java
+
+public class LibrarianClient implements Librarian {
+    @Override
+    public void addBook(Book book) {
+        // Добавляем книгу
+    }
+
+    @Override
+    public void removeBook(Book book) {
+        // Удаляем книгу
+    }
+}
+
+// Файл: LibrarySystem.java
+
+public class LibrarySystem implements Reader, Librarian {
+    private Library library;
+
+    public LibrarySystem(Library library) {
+        this.library = library;
+    }
+
+    @Override
+    public void readBook(Book book) {
+        // Читаем книгу через систему библиотеки
+    }
+
+    @Override
+    public void addBook(Book book) {
+        // Добавляем книгу через систему библиотеки
+    }
+
+    @Override
+    public void removeBook(Book book) {
+        // Удаляем книгу через систему библиотеки
+    }
+}
+
+// Файл: DatabaseManager.java
+
+public class DatabaseManager {
+    public void saveData(Library library) {
+        // Сохраняем данные библиотеки в базе данных
+    }
+
+    public void loadData(Library library) {
+        // Загружаем данные библиотеки из базы данных
+    }
+}
